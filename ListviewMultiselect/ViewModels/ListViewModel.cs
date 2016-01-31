@@ -15,7 +15,7 @@ namespace ListviewMultiselect.ViewModels
 				return text;
 			}set{
 				text = value;
-				OnPropertyChanged("Text");
+				OnPropertyChanged(nameof(Text));
 			}
 		}
 
@@ -25,8 +25,7 @@ namespace ListviewMultiselect.ViewModels
 				return isselected;
 			}set{
 				isselected = value;
-				OnPropertyChanged("IsSelected");
-				OnPropertyChanged(nameof(TextColor));
+				OnPropertyChanged(nameof(IsSelected));
 				OnPropertyChanged(nameof(DetailImage));
 			}
 		}
@@ -34,9 +33,6 @@ namespace ListviewMultiselect.ViewModels
 		public Color TextColor
 		{
 			get{
-				if(IsSelected){
-					return Color.FromRgb(77,200,233);
-				}
 				return Color.Black;
 			}
 		}
@@ -45,9 +41,9 @@ namespace ListviewMultiselect.ViewModels
 		{
 			get{
 				if(IsSelected){
-					return "detail1";
+					return "ic_checkmark_active";
 				}
-				return "detail";
+				return "ic_checkmark_unactive";
 			}
 		}
 	}

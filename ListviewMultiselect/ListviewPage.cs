@@ -8,48 +8,43 @@ namespace ListviewMultiselect
 	public class ListviewPage : ContentPage
 	{
 		ObservableCollection <ListViewModel> ListItems { get; set;} = new ObservableCollection<ListViewModel> {
-			new ListViewModel{Text = "Lista Tareas"},
-			new ListViewModel{Text = "Insertar Tareas"},
-			new ListViewModel{Text = "Buscar Tareas"}
+			new ListViewModel{Text = "Item 1"},
+			new ListViewModel{Text = "Item 2"},
+			new ListViewModel{Text = "Item 3"},
+			new ListViewModel{Text = "Item 4"},
+			new ListViewModel{Text = "Item 5"},
+			new ListViewModel{Text = "Item 6"},
+			new ListViewModel{Text = "Item 7"},
+			new ListViewModel{Text = "Item 8"},
+			new ListViewModel{Text = "Item 9"}
 		};
 
 		ListView ListView { get; set;}
 
 		public ListviewPage ()
 		{
-
 			ListView = new ListView ();
 			ListView.ItemsSource = ListItems;
-			ListView.RowHeight = 60;
 			ListView.ItemTemplate =  new DataTemplate (typeof(CustomCell));
 			ListView.ItemTapped += MenuListView_ItemTapped;
 
 			var ListViewLayout = new StackLayout ();
-			ListViewLayout.HeightRequest = 180;
+			ListViewLayout.Padding = new Thickness (10, 20);
 			ListViewLayout.Children.Add (ListView);
-			var button = new Button ();
-			button.Text = "prueb";
-			button.Clicked += Button_Clicked;
-			ListViewLayout.Children.Add (button);
 			Content = ListViewLayout;
-		}
-
-		async void Button_Clicked (object sender, EventArgs e)
-		{
-			foreach (var x in ListItems) {
-				if (x.IsSelected) {
-					await DisplayAlert("Simon",x.Text + " Esa bi","ok");
-				}
-			}
 		}
 
 		void MenuListView_ItemTapped (object sender, ItemTappedEventArgs e)
 		{
-			var x = e.Item as ListViewModel;
-			if (x.IsSelected)
-				x.IsSelected = false;
+			if ((sender as ListView).SelectedItem == null)
+				return;
+			(sender as ListView).SelectedItem = null;
+
+			var item = e.Item as ListViewModel;
+			if (item.IsSelected)
+				item.IsSelected = false;
 			else
-				x.IsSelected = true;
+				item.IsSelected = true;
 		}
 	}
 }
