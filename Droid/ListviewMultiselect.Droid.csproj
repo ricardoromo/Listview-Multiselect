@@ -93,8 +93,8 @@
     <AndroidResource Include="Resources\drawable-hdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\icon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\icon.png" />
-    <AndroidResource Include="Resources\drawable\ic_checkmark_unactive%403x.png" />
     <AndroidResource Include="Resources\drawable\ic_checkmark_active.png" />
+    <AndroidResource Include="Resources\drawable\ic_checkmark_unactive.png" />
   </ItemGroup>
   <Import Project="..\ListviewMultiselect\ListviewMultiselect.projitems" Label="Shared" Condition="Exists('..\ListviewMultiselect\ListviewMultiselect.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />

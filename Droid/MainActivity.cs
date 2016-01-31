@@ -10,7 +10,7 @@ using Android.OS;
 
 namespace ListviewMultiselect.Droid
 {
-	[Activity (Label = "ListviewMultiselect.Droid", Icon = "@drawable/icon", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
+	[Activity (Label = "ListviewMultiselect.Droid", Icon = "@drawable/icon", MainLauncher = true,Theme = "@android:style/Theme.Holo.Light", ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
 	public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsApplicationActivity
 	{
 		protected override void OnCreate (Bundle bundle)
