@@ -1,5 +1,5 @@
 # Listview-Multiselect
-It's simple sample to create a multiselect Listview using MVVM
+It's a simple sample to simulate a multiselect Listview.
 
 # Preview
 
