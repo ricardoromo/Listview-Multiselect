@@ -1,5 +1,5 @@
 # Listview-Multiselect
-It's a simple sample to simulate a multiselect Listview.
+It's a simple sample to simulate a multiselect Listview on iOS/Android using Xamarin Forms.
 
 # Preview
 
