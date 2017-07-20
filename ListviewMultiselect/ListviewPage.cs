@@ -41,10 +41,15 @@ namespace ListviewMultiselect
 			(sender as ListView).SelectedItem = null;
 
 			var item = e.Item as ListViewModel;
-			if (item.IsSelected)
-				item.IsSelected = false;
-			else
-				item.IsSelected = true;
+            if (item.IsSelected)
+                item.IsSelected = false;
+            else
+            {
+                foreach (var listitem in ListItems)
+                    listitem.IsSelected = false;
+
+                item.IsSelected = true;
+            }
 		}
 	}
 }
